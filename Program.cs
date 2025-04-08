@@ -1,49 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Tarea
+﻿namespace Tarea.Geometría_A
 {
-    internal class NumeroRepetido
+    internal class _1
     {
         static void Main(string[] args)
         {
-            List<int> numeros = new List<int>();
-            HashSet<int> repetidos = new HashSet<int>();
+            Console.WriteLine("Vamos a calcular el area y el perimetro de un cuadrado");
+            Console.WriteLine("Ingrese la lingitud de una de las caras del Cuadrado: ");
+            double a = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Ingrese números (escriba 'fin' para terminar):");
+            double area = a * a;
+            double perimetro = a * 4;
 
-            while (true)
-            {
-                Console.Write("Número: ");
-                string entrada = Console.ReadLine();
-
-                if (entrada.ToLower() == "fin")
-                {
-                    break;
-                }
-
-                if (int.TryParse(entrada, out int numero))
-                {
-                    if (numeros.Contains(numero))
-                    {
-                        repetidos.Add(numero);
-                    }
-                    numeros.Add(numero);
-                }
-                else
-                {
-                    Console.WriteLine("Entrada no válida. Ingrese un número o 'fin'.");
-                }
-            }
-
-            if (repetidos.Count > 0)
-            {
-                Console.WriteLine("Números repetidos: " + string.Join(", ", repetidos));
-            }
-            else
-            {
-                Console.WriteLine("No hay números repetidos.");
-            }
+            Console.WriteLine("El area del cuadrado es: " + area + "y el perimetro es: " + perimetro);
         }
     }
 }
