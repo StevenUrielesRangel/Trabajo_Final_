@@ -1,17 +1,25 @@
-﻿namespace Tarea.Geometría_A
+﻿using System;
+
+namespace ComprobarVocal
 {
-    internal class _1
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Vamos a calcular el area y el perimetro de un cuadrado");
-            Console.WriteLine("Ingrese la lingitud de una de las caras del Cuadrado: ");
-            double a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese unan vocal:");
+            char letra = char.ToLower(Console.ReadKey().KeyChar);
+            Console.WriteLine();
 
-            double area = a * a;
-            double perimetro = a * 4;
-
-            Console.WriteLine("El area del cuadrado es: " + area + "y el perimetro es: " + perimetro);
+            switch (letra)
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    Console.WriteLine("Es una vocal.");
+                    break;
+            }
         }
     }
 }
